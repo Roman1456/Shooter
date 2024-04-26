@@ -12,10 +12,10 @@ backround = pygame.transform.scale(
 )
 
 rocket = Rocket(300,390,100,100, "kartka/rocket.png",10)
-nlo = NLO(310,70,80,50, "kartka/ufo.png",10)
+
 nlo1 = []
 nlo1.append(NLO(360,100,80,50, "kartka/ufo.png",10))
-
+nlo1.append(NLO(400,100,80,50, "kartka/ufo.png",10))
 
 
 
@@ -39,10 +39,9 @@ while game:
 
 
     window.blit(backround, (0, 0))
-    while game:
-        nlo1.draw(window)
+    for nlo in nlo1:
+        nlo.draw(window)
     rocket.move()
-    nlo.draw(window)
     rocket.draw(window)
     pygame.display.flip()
     fps.tick(60)

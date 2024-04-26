@@ -14,4 +14,5 @@ class NLO:
     def draw(self, window):
         window.blit(self.photo, (self.hitbox.x, self.hitbox.y))
 
+   
 
