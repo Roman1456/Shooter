@@ -1,9 +1,9 @@
 import pygame
-import random
 
 
 
-class NLO:
+
+class Bullet:
     def __init__(self,x,y,w,h,img,speed):
         self.photo = pygame.transform.scale(pygame.image.load(img), (w, h))
         self.hitbox = self.photo.get_rect()
@@ -14,12 +14,6 @@ class NLO:
     def draw(self, window):
         window.blit(self.photo, (self.hitbox.x, self.hitbox.y))
 
+
     def move(self):
-        self.hitbox.y += self.speed
-        if self.hitbox.y > 500 :
-            self.hitbox.y = 0
-            self.hitbox.x = random.randint(0,700)
-
-
-   
-
+        self.hitbox.y -= self.speed

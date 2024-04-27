@@ -1,5 +1,5 @@
 import pygame
-
+from Bullet import Bullet
 
 
 
@@ -10,9 +10,13 @@ class Rocket:
         self.hitbox.x = x
         self.hitbox.y = y
         self.speed = speed
+        self.patronu=[]
 
     def draw(self, window):
         window.blit(self.photo, (self.hitbox.x, self.hitbox.y))
+        for bullet in self.patronu:
+            bullet.draw(window)
+            bullet.move()
 
     def move(self):
         keys = pygame.key.get_pressed()
@@ -23,6 +27,8 @@ class Rocket:
         if keys[pygame.K_a]:
             self.hitbox.x -= self.speed
 
+        if keys[pygame.K_f]:
+            self.patronu.append(Bullet(self.hitbox.x,self.hitbox.y,50,50,"kartka/bullet.png",10))
 
 
 
