@@ -37,7 +37,7 @@ while game:
         if event.type == pygame.MOUSEBUTTONDOWN:
             print(pygame.mouse.get_pos())
 
-
+        
 
 
 
@@ -50,13 +50,15 @@ while game:
         nlo.move()
     rocket.move()
     rocket.draw(window)
-    
+
 
 
     if rocket.hitbox.colliderect(nlo.hitbox):
         text_surface = font.render("Програв", True, (234, 126, 47))
         window.blit(text_surface, [310, 24])
         pygame.display.flip()
+
+
 
     pygame.display.flip()
     fps.tick(60)
