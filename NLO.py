@@ -11,6 +11,7 @@ class NLO:
         self.hitbox.y = y
         self.speed = speed
 
+
     def draw(self, window):
         window.blit(self.photo, (self.hitbox.x, self.hitbox.y))
 

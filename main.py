@@ -37,8 +37,9 @@ while game:
         if event.type == pygame.MOUSEBUTTONDOWN:
             print(pygame.mouse.get_pos())
 
-        
-
+    for bullet in nlo1 :
+        if bullet.rect.colliderect(nlo1.hitbox):
+            game=False
 
 
 
@@ -50,7 +51,6 @@ while game:
         nlo.move()
     rocket.move()
     rocket.draw(window)
-
 
 
     if rocket.hitbox.colliderect(nlo.hitbox):
