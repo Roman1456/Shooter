@@ -17,3 +17,4 @@ class Bullet:
 
     def move(self):
         self.hitbox.y -= self.speed
+
